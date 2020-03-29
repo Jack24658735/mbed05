@@ -11,6 +11,7 @@ EventQueue eventQueue;
 void blink_led2() {
   // this runs in the normal priority thread
   led2 = !led2;
+
 }
 
 void print_toggle_led() {
@@ -40,6 +41,7 @@ int main() {
 
   // button fall still runs in the ISR
   btn.fall(&btn_fall_irq);
-
-  while (1) {}
+  while (1) {
+      wait(1);
+  }
 }
